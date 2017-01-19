@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>提问</title>
+  </head>
+
+  <body>
+    <hr />
+      用户: {{user.user_name}}
+      <a href="{% url 'logout' %}">登出</a>
+      <a href="{% url 'index' %}">首页</a>
+    <hr />
+    <p>问题</p>
+    <form action="" method="post">
+      {% csrf_token %}
+      <textarea name="question_content" rows="10" cols="50"></textarea>
+      <input type="submit" name="submit" value="提交">
+      <input type="reset" name="reset" value="重置 ">
+    </form>
+</html>

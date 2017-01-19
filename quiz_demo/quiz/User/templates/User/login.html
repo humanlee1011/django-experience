@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>登录页面</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+    <script type="text/javascript" src="./login.js"></script>
+  </head>
+
+  <body>
+    <form action="" method="post">
+      <!-- 一定要加这句话！！ -->
+      {% csrf_token %}
+      <p> 用户名： <input type="text" name="user_name" value=""> </p>
+      <p> 密码： <input type="password" name="password" value=""> </p>
+      <p><input type="submit" name="submit" value="提交">
+          <input type='reset' name="reset" value="重置">
+      <p id="error">该用户不存在或密码不正确</p>
+    </form>
+    <a href="{% url 'register' %}">注册</a>
+  </body>
+</html>
